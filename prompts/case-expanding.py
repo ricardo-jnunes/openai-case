@@ -1,41 +1,57 @@
 from setup import *
+# given the sentiment from the lesson on "inferring",
+# and the original customer message, customize the email
+sentiment = "negative"
 
-prod_review = """
-Got this panda plush toy for my daughter's birthday, \
-who loves it and takes it everywhere. It's soft and \ 
-super cute, and its face has a friendly look. It's \ 
-a bit small for what I paid though. I think there \ 
-might be other options that are bigger for the \ 
-same price. It arrived a day earlier than expected, \ 
-so I got to play with it myself before I gave it \ 
-to her.
+# review for a blender
+review = f"""
+So, they still had the 17 piece system on seasonal \
+sale for around $49 in the month of November, about \
+half off, but for some reason (call it price gouging) \
+around the second week of December the prices all went \
+up to about anywhere from between $70-$89 for the same \
+system. And the 11 piece system went up around $10 or \
+so in price also from the earlier sale price of $29. \
+So it looks okay, but if you look at the base, the part \
+where the blade locks into place doesn't look as good \
+as in previous editions from a few years ago, but I \
+plan to be very gentle with it (example, I crush \
+very hard items like beans, ice, rice, etc. in the \ 
+blender first then pulverize them in the serving size \
+I want in the blender then switch to the whipping \
+blade for a finer flour, and use the cross cutting blade \
+first when making smoothies, then use the flat blade \
+if I need them finer/less pulpy). Special tip when making \
+smoothies, finely cut and freeze the fruits and \
+vegetables (if using spinach-lightly stew soften the \ 
+spinach then freeze until ready for use-and if making \
+sorbet, use a small to medium sized food processor) \ 
+that you plan to use that way you can avoid adding so \
+much ice if at all-when making your smoothie. \
+After about a year, the motor was making a funny noise. \
+I called customer service but the warranty expired \
+already, so I had to buy another one. FYI: The overall \
+quality has gone done in these types of products, so \
+they are kind of counting on brand recognition and \
+consumer loyalty to maintain sales. Got it in about \
+two days.
 """
 
+#Remind the model to use details from the customer's email
 prompt = f"""
-Your task is to generate a short summary of a product \
-review from an ecommerce site. 
-
-Summarize the review below, delimited by triple 
-backticks, in at most 30 words. 
-
-Review: ```{prod_review}```
+You are a customer service AI assistant.
+Your task is to send an email reply to a valued customer.
+Given the customer email delimited by ```, \
+Generate a reply to thank the customer for their review.
+If the sentiment is positive or neutral, thank them for \
+their review.
+If the sentiment is negative, apologize and suggest that \
+they can reach out to customer service. 
+Make sure to use specific details from the review.
+Write in a concise and professional tone.
+Sign the email as `AI customer agent`.
+Customer review: ```{review}```
+Review sentiment: {sentiment}
 """
-
-response = get_completion(prompt)
+response = get_completion(prompt, temperature=0.7)
 print(response)
-
-
-#Try "extract" instead of "summarize"
-prompt = f"""
-Your task is to extract relevant information from \ 
-a product review from an ecommerce site to give \
-feedback to the Shipping department.
-From the review below, delimited by triple quotes \
-extract the information relevant to shipping and \ 
-delivery. Limit to 30 words. 
-Review: ```{prod_review}```
-"""
-
-response = get_completion(prompt)
-print(response)
-#The shipping department should take note that the product arrived a day earlier than expected.
