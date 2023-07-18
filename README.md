@@ -36,6 +36,7 @@ Check assumptions required to do the task
 ### Iterative Prompt 
 
 Idea -> Implementation (code/data) & Prompt -> Experimental result -> Error Analysis 
+
 <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- 
 
 ### Inferring
