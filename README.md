@@ -1,6 +1,10 @@
 # openai-study
 
 
+### Large language models 
+Large language models (LLMs) are deep learning algorithms that can recognize, summarize, translate, predict, and generate content using very large datasets. LLMs largely represent a class of deep learning architectures called transformer networks. A transformer model is a neural network that learns context and meaning by tracking relationships in sequential data, like the words in this sentence.
+
+
 ## Prompting Principles
 - **Principle 1: Write clear and specific instructions**
 - **Principle 2: Give the model time to “think”**
@@ -63,3 +67,15 @@ Idea -> Implementation (code/data) & Prompt -> Experimental result -> Error Anal
         """
    ```
 
+
+### Transforming
+
+Large language models are very good at transforming its input to a 
+different format, like translating to antoher lanaguage, grammar checking, format parsing (JSON, HTML, etc)
+
+
+### Expanding
+
+Generating a extensive and qualitative text from a prompt.
+
+- case-expanding.py
