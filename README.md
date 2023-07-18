@@ -32,3 +32,9 @@ Check assumptions required to do the task
 
 #### Reducing Hallucinations
 - First find relevant information, then answer the question based on the relevant infomration
+
+### Iterative Prompt 
+
+Idea -> Implementation (code/data) & Prompt -> Experimental result -> Error Analysis 
+<- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- 
+
