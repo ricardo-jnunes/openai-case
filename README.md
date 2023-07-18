@@ -43,6 +43,11 @@ Idea -> Implementation (code/data) & Prompt -> Experimental result -> Error Anal
 
 <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- 
 
+## Capabilities
+
+### Summarizing
+- case-summarizing.py
+
 ### Inferring
 
 - Can analysis: 
