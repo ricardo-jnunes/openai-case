@@ -38,3 +38,28 @@ Check assumptions required to do the task
 Idea -> Implementation (code/data) & Prompt -> Experimental result -> Error Analysis 
 <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- <- 
 
+### Inferring
+
+- Can analysis: 
+   - Sentiment (positive/negative)
+   - Types of emotions found in a text
+   ```code
+        prompt = f"""
+        Is the writer of the following review expressing anger?\
+        The review is delimited with triple backticks. \
+        Give your answer as either yes or no.
+   ```
+   - Extract topics from a text
+   ```code
+       prompt = f"""
+        Determine five topics that are being discussed in the \
+        following text, which is delimited by triple backticks.
+
+        Make each item one or two words long. 
+
+        Format your response as a list of items separated by commas.
+
+        Text sample: '''{story}'''
+        """
+   ```
+
