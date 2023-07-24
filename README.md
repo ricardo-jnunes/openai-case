@@ -4,6 +4,8 @@
 ### Large language models 
 Large language models (LLMs) are deep learning algorithms that can recognize, summarize, translate, predict, and generate content using very large datasets. LLMs largely represent a class of deep learning architectures called transformer networks. A transformer model is a neural network that learns context and meaning by tracking relationships in sequential data, like the words in this sentence.
 
+LLM are stateless, so far a conversation, the chat is put in memory, providing the full conversation to IA.
+
 
 ## Prompting Principles
 - **Principle 1: Write clear and specific instructions**
@@ -85,3 +87,18 @@ different format, like translating to antoher lanaguage, grammar checking, forma
 Generating a extensive and qualitative text from a prompt.
 
 - case-expanding.py
+
+
+# LangChain
+
+LangChain is a framework for developing applications powered by language models.
+
+- Pyhton and typescript/JS
+- Open-source
+- Focused on composition and modularity
+
+Good to reuse prompt templates, easiest to extract keywords or topics from the prompts and parse outputs.
+
+
+ - Memory Buffer: Stores the conversation to reuse on chat/prompts.
+ - Chains: An ouptut-chain is an input-chain for the another chain, generating a better and more complete data for final ouput
